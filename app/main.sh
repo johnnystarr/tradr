@@ -1,1 +1,4 @@
 logo
+
+colorize
+echo "hey"
