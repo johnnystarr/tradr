@@ -1,0 +1,3 @@
+colorize() {
+    str = shift
+}

@@ -13,3 +13,7 @@ build: minifier.py
 clean:
 	@rm -f minifier.py
 	@rm -f compiled.sh $(APP).sh
+
+docker: build
+	@docker build . -t tradr
+	@docker run -it --rm tradr
