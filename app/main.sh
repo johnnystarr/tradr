@@ -8,6 +8,7 @@ if [ $response_color = "y" ]; then
     say "_g_G_r_r_y_o_c_o_m_v_b_y_W_!_x_"
 else
     export TRADR_ANSI_COLOR_SUPPORT=0
+    say ":("
 fi
 
 

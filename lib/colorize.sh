@@ -18,8 +18,12 @@ colorize() {
     colors[_W_]="\033[1;37m"
 
     for k in "${!colors[@]}"; do
-        escaped_value=$(echo "${colors[$k]}" | sed -e 's/\\/\\\\/g')
-        str=$(echo $str | sed "s/$k/$escaped_value/g")
+        if [ $TRADR_ANSI_COLOR_SUPPORT = 1 ]; then
+            escaped_value=$(echo "${colors[$k]}" | sed -e 's/\\/\\\\/g')
+            str=$(echo $str | sed "s/$k/$escaped_value/g")
+        else
+            str=$(echo $str | sed "s/$k//g")
+        fi
     done
 
     echo "$str"
