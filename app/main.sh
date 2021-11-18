@@ -10,5 +10,3 @@ else
     export TRADR_ANSI_COLOR_SUPPORT=0
     say ":("
 fi
-
-

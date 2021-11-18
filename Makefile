@@ -16,3 +16,7 @@ clean:
 docker: build
 	@docker build -q . -t tradr
 	@docker run -it --rm tradr
+
+dist: build
+	@mkdir -p dist
+	@cp tradr.sh dist/
