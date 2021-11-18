@@ -18,7 +18,7 @@ colorize() {
     colors[_W_]="\033[1;37m"
 
     for k in "${!colors[@]}"; do
-        escaped_value=$(printf '%s\n' "${colors[$k]}" | sed -e 's/[\/&]/\\&/g')
+        escaped_value=$(echo "${colors[$k]}" | sed -e 's/\\/\\\\/g')
         str=$(echo $str | sed "s/$k/$escaped_value/g")
     done
 
